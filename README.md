@@ -1,2 +1,2 @@
 # high-performance-python
-Learning High Performance Python book, by Micha Gorelick and Ian Ozsvald
+Learning High Performance Python book, by Micha Gorelick and Ian Ozsvald, [book on Amazon](https://www.amazon.com/High-Performance-Python-Performant-Programming/dp/1492055026/)
