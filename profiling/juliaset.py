@@ -4,6 +4,8 @@ import time
 from PIL import Image
 import array
 
+from decorator import timefn
+
 # area of complex space to investigate
 x1, x2, y1, y2 = -1.8, 1.8, -1.8, 1.8
 c_real, c_imag = -0.62772, -0.42193
@@ -37,6 +39,7 @@ def show_false_greyscale(output_raw, width, height):
     im.show()
 
 
+@timefn
 def calculate_z_serial_purepython(max_iter, zs, cs):
     """calculate output list using Julia update rule: f(z) = z**2 + c"""
     output = [0] * len(zs)
@@ -91,4 +94,4 @@ def calc_pure_python(width, max_iter, draw_output=False, greyscale=True):
 
 
 if __name__ == "__main__":
-    calc_pure_python(width=1000, max_iter=300, draw_output=True, greyscale=False)
+    calc_pure_python(width=1000, max_iter=300, draw_output=True, greyscale=True)
