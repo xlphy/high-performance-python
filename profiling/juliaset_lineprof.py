@@ -1,10 +1,7 @@
 """Julia set generator"""
-
 import time
 from PIL import Image
 import array
-
-from time_decor import timefn
 
 # area of complex space to investigate
 x1, x2, y1, y2 = -1.8, 1.8, -1.8, 1.8
@@ -38,8 +35,7 @@ def show_false_greyscale(output_raw, width, height):
     im.frombytes(output_rgb.tobytes(), "raw", "RGBX", 0, -1)
     im.show()
 
-
-@timefn
+@profile
 def calculate_z_serial_purepython(max_iter, zs, cs):
     """calculate output list using Julia update rule: f(z) = z**2 + c"""
     output = [0] * len(zs)
