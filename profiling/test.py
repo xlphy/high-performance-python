@@ -9,6 +9,7 @@ def test_some_fn():
     assert some_fn(1) == 1
     assert some_fn(-1) == 1
 
+
 # check for line_profiler or memory_profiler in the local scope
 # both are injected by their respective tools or they're absent
 # if these tools aren't be used (in which case we need to substitute a dummy @profile decorator)
