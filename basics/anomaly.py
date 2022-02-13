@@ -33,6 +33,14 @@ def groupby_day(iterable):
         yield list(data_group)
 
 
+# group data by window
+def groupby_window(data, window_size=3600):
+    window = tuple(islice(data, window_size))
+    for item in data:
+        yield window
+        window = window[1:] + (item, )
+
+
 def is_normal(data, threshold=1e-3):
     _, values = zip(*data)
     k2, p_value = normaltest(values)
